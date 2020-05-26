@@ -6,7 +6,7 @@ function hint($content) {
         if (false !== ($j = \strpos(\substr($content, $i), $end))) {
             $i += $j + \strlen($end);
             $hint = \State::get("x.comment\\.hint.hint");
-            $hint = $hint ? '<br><small>' . $hint . '</small>' : "";
+            $hint = $hint ? '<br><small>' . \i($hint) . '</small>' : "";
             return \substr($content, 0, $i) . $hint . \substr($content, $i);
         }
     }

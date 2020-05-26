@@ -30,7 +30,5 @@ if ($comment_is_using_markdown) {
     $hint = 'Some HTML tags are allowed to be written in the comment body.';
 }
 
-$hint = i($hint); // Hook to the internationalization system if any
-
 State::set('x.comment\.hint.hint', $hint);
 ~~~
