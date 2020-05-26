@@ -3,7 +3,7 @@ title: Comment Hint
 description: Add a few instructions for your visitors on how to write a comment, right below the comment message field.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.0
+version: 1.0.1
 
 use:
   '.\lot\x\comment': 1
