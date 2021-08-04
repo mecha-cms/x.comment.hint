@@ -1,5 +1,5 @@
-Comment Hint Extension for Mecha
-================================
+Comment Hint Extension for [Mecha](https://github.com/mecha-cms/mecha)
+======================================================================
 
 Release Notes
 -------------
