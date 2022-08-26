@@ -3,7 +3,7 @@ title: Comment Hint
 description: Add a few instructions for your visitors on how to write a comment, right below the comment message field.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.1.0
+version: 1.2.0
 
 use:
   '.\lot\x\comment': 1
@@ -30,5 +30,5 @@ if ($is_comment_use_markdown) {
     $hint = 'Some HTML tags are allowed to be written in the comment body.';
 }
 
-State::set('x.comment\.hint.content', $hint);
+State::set("x.comment\\.hint.content", $hint);
 ~~~
