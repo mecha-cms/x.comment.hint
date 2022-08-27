@@ -1,31 +1,21 @@
 <?php namespace x;
 
-function comment__hint($content) {
-    foreach (['author', 'email', 'link'] as $v) {
-        if (false !== ($i = $test = \strpos($content, ' name="comment[' . $v . ']"'))) {
-            $end = '>';
-            if (false !== ($j = \strpos(\substr($content, $i), $end))) {
-                $i += $j + \strlen($end);
-                if (false === \strpos(\substr($content, $test, $j), ' type="hidden"')) {
-                    $hint = \State::get("x.comment\\.hint." . $v);
-                    $hint = $hint ? '<br><small>' . \i($hint) . '</small>' : "";
-                    $content = \substr($content, 0, $i) . $hint . \substr($content, $i);
-                }
+function comment__hint($y) {
+    foreach (['author', 'content', 'email', 'link'] as $key) {
+        if (isset($y[1][$key]) && \is_array($y[1][$key])) {
+            if ($hint = \State::get("x.comment\\.hint." . $key)) {
+                $y[1][$key][1][2][1][] = [
+                    0 => 'br',
+                    1 => false
+                ];
+                $y[1][$key][1][2][1][] = [
+                    0 => 'small',
+                    1 => (string) $hint
+                ];
             }
         }
     }
-    if (false !== ($i = $test = \strpos($content, ' name="comment[content]"'))) {
-        $end = '</textarea>';
-        if (false !== ($j = \strpos(\substr($content, $i), $end))) {
-            $i += $j + \strlen($end);
-            if (false === \strpos(\substr($content, $test, $j), ' type="hidden"')) {
-                $hint = \State::get("x.comment\\.hint.content");
-                $hint = $hint ? '<br><small>' . \i($hint) . '</small>' : "";
-                $content = \substr($content, 0, $i) . $hint . \substr($content, $i);
-            }
-        }
-    }
-    return $content;
+    return $y;
 }
 
-\Hook::set('content', __NAMESPACE__ . "\\comment__hint", 10);
+\Hook::set('y.form.comment', __NAMESPACE__ . "\\comment__hint", 10);
