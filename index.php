@@ -1,5 +1,10 @@
 <?php namespace x;
 
+// Disable this extension if `comment` extension is disabled or removed ;)
+if (!isset($state->x->comment)) {
+    return;
+}
+
 function comment__hint($y) {
     foreach (['author', 'content', 'email', 'link'] as $key) {
         if (isset($y[1][$key]) && \is_array($y[1][$key])) {
