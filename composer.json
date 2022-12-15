@@ -1,5 +1,5 @@
 {
-  "description": "Add a few instructions for your visitors on how to write a comment, right below the comment message field.",
+  "description": "Adds a few instructions for your visitors on how to write a comment, right below the comment message field.",
   "license": "GPL-3.0-or-later",
   "name": "mecha-cms/x.comment.hint",
   "require": {
