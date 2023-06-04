@@ -1,11 +1,11 @@
-<?php namespace x\comment__hint\y;
+<?php namespace x\comment__hint;
 
 // Disable this extension if `comment` extension is disabled or removed ;)
 if (!isset($state->x->comment)) {
     return;
 }
 
-function form($y) {
+function y__form__comment($y) {
     foreach (['author', 'content', 'email', 'link'] as $key) {
         if (isset($y[1][$key]) && \is_array($y[1][$key])) {
             if ($hint = \State::get("x.comment\\.hint." . $key)) {
@@ -23,4 +23,4 @@ function form($y) {
     return $y;
 }
 
-\Hook::set('y.form.comment', __NAMESPACE__ . "\\form", 10);
+\Hook::set('y.form.comment', __NAMESPACE__ . "\\y__form__comment", 10);
