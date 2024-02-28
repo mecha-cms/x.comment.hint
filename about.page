@@ -6,7 +6,7 @@ color: '#934862'
 author: Taufik Nurrohman
 image: /lot/x/comment.hint/index.png
 type: Markdown
-version: 1.2.0
+version: 1.2.1
 ...
 
 Open `.\lot\x\comment.hint\state.php` file, then replace the default comment hint state as you wish:
